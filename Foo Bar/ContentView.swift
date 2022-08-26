@@ -9,28 +9,18 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var counter = 0
-    @State private var display = "0"
-    
     
     var body: some View {
-        Text(display)
-            .font(.system(size: 128))
-            .multilineTextAlignment(.center)
-            .preferredColorScheme(.dark)
-            .onTapGesture {
-                if counter % 3 == 0 {
-                    display = "Foo"
-                }
-                else {
-                    display = String(counter)
-                }
-            }
-            .onLongPressGesture {
-                display = "Foo Bar"
-            }
-        
-        
-        
+        Text("\(counter)")
+                    .font(.system(size: 128))
+                    .multilineTextAlignment(.center)
+                    .preferredColorScheme(.dark)
+                    .onTapGesture {
+                        counter += 1
+                    }
+                    .onLongPressGesture {
+                        counter = 0
+                    }
             .padding()
     }
 }
