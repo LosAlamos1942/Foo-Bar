@@ -43,6 +43,7 @@ struct ContentView: View {
                 .onLongPressGesture {
                     counter = 0
                     display = "0"
+                    color = Color.black 
                 }
                 .padding()
         }
